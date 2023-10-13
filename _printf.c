@@ -45,6 +45,8 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int word_counter;
+	int number;
+	int digits;
 
 	word_counter = 0;
 	va_start(args, format);
@@ -66,6 +68,18 @@ int _printf(const char *format, ...)
 						break;
 					case 's':
 						word_counter += putstr(va_arg(args, char *));
+						break;
+					case 'd':
+						number = va_arg(args, int);
+						putnbr(number);
+						digits = numlen(number);
+                                                word_counter = word_counter + digits;
+						break;
+					case 'i':
+						number = va_arg(args, int);
+                                                putnbr(number);
+                                                digits = numlen(number);
+						word_counter = word_counter + digits;
 						break;
 					default:
 						break;

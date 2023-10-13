@@ -4,5 +4,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+int _printf(const char *format, ...);
+void putnbr(long num);
+int numlen(int num);
+void _putchar(int c);
 
 #endif
