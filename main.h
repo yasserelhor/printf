@@ -26,5 +26,8 @@ int _strlen(char *s);
 int printf_char(va_list val);
 int printf_string(va_list val);
 int _printf(const char * const format, ...);
+int print_int(va_list args);
+int numlen(long num);
+void putnbr(long num);
 
 #endif
