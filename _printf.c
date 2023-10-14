@@ -40,9 +40,9 @@ int _printf(const char * const format, ...)
 		}
 		if (checker == 0)
 		{
-		    _putchar(format[i]);
-		    i++;
-		    len++;
+			_putchar(format[i]);
+			i++;
+			len++;
 		}
 		checker = 0;
 	}
