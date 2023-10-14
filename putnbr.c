@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * numlen - Calculates the number of digits in a long integer.
+ *
+ * @num: The long integer for which to count digits.
+ *
+ * Return: The number of digits in the integer.
+ */
+
 int numlen(long num)
 {
 	int len;
@@ -20,6 +28,12 @@ int numlen(long num)
 	return (len);
 }
 
+/**
+ * putnbr - Recursively prints a long integer to the standard output (stdout).
+ *
+ * @num: The long integer to be printed.
+ */
+
 void putnbr(long num)
 {
 	if (num < 0)
@@ -35,6 +49,14 @@ void putnbr(long num)
 	putnbr(num / 10);
 	_putchar(num % 10 + '0');
 }
+
+/**
+ * print_int - Conversion function for printing an integer.
+ *
+ * @args: A va_list containing the integer to be printed.
+ *
+ * Return: The number of characters printed.
+ */
 
 int print_int(va_list args)
 {
