@@ -81,7 +81,6 @@ here:
 				default:
 					write(2, "Error\n", 5);
 					return (-1);
-					break;
 			}
 		}
 		format++;
