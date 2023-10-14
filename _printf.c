@@ -1,5 +1,15 @@
 #include "main.h"
 
+/**
+ * _printf - Custom printf function to print formatted output.
+ *
+ * @format: A pointer to a format string that specifies the output format.
+ * @...: Variable arguments list based on the format string.
+ *
+ * Return: The total number of characters printed to stdout. -1 on error.
+ */
+
+
 int _printf(const char * const format, ...)
 {
 	convert_match m[] = {

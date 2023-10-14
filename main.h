@@ -4,11 +4,20 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+
+/**
+ * struct format - Struct to match
+ * format identifiers with conversion functions.
+ * @id: The format identifier, e.g., "c" for character.
+ * @f: A pointer to the conversion function.
+ */
+
 typedef struct format
 {
 	char *id;
 	int (*f)();
 } convert_match;
+
 
 int _printf(const char *format, ...);
 int _putchar(char c);
