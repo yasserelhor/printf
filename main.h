@@ -4,9 +4,18 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+typedef struct format
+{
+	char *id;
+	int (*f)();
+} convert_match;
+
 int _printf(const char *format, ...);
-void putnbr(long num);
-int numlen(int num);
-int _putchar(int c);
+int _putchar(char c);
+int printf_37(void);
+int _strlen(char *s);
+int printf_char(va_list val);
+int printf_string(va_list val);
+int _printf(const char * const format, ...);
 
 #endif

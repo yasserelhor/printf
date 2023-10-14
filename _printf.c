@@ -1,108 +1,41 @@
 #include "main.h"
-#include <stdio.h>
 
-/**
- * _putchar - Writes a single character to the standard output (stdout).
- *
- * @c: The character to be written.
- *
- * Return: On success, returns the character written. On error, returns -1.
- */
-int _putchar(int c)
+int _printf(const char * const format, ...)
 {
-	write(1, &c, 1);
-	return (1);
-}
+	convert_match m[] = {
+		{"%s", printf_string}, {"%c", printf_char},
+		{"%%", printf_37},
+	};
 
-/**
- * putstr - Writes a null-terminated string to the standard output (stdout).
- *
- * @str: A pointer to the null-terminated string to be written.
- *
- * Return: The number of characters written to stdout.
- */
-int putstr(char *str)
-{
-	int len;
-
-	if (str == NULL)
-		return (0);
-	len = 0;
-	while (str[len])
-	{
-		_putchar(str[len]);
-		len++;
-	}
-	return (len);
-}
-
-/**
- * fprint - Print formatted output to the standard output (stdout).
- *
- * @format: A pointer to a format string that specifies the output format.
- * @args: Variable arguments list based on the format string.
- *
- * Return: The total number of characters printed to stdout.
- */
-int fprint(const char *format, va_list args)
-{
-	int word_counter = 0, digits, number;
-
-	while (*format)
-	{
-		if (*format != '%')
-		{
-			write(1, format, 1);
-			word_counter++;
-		}
-		else if (*format == '%')
-		{
-			format++;
-			switch (*format)
-			{
-				case 'c':
-					word_counter += _putchar(va_arg(args, int));
-					break;
-				case 's':
-					word_counter += putstr(va_arg(args, char *));
-					break;
-				case '%':
-					word_counter += _putchar('%');
-					break;
-				case 'd':
-here:
-					number = va_arg(args, int);
-					putnbr(number);
-					digits = numlen(number);
-					word_counter += digits;
-					break;
-				case 'i':
-					goto here;
-				default:
-					write(2, "Error\n", 5);
-					return (-1);
-			}
-		}
-		format++;
-	}
-	return (word_counter);
-}
-
-/**
- * _printf - Print formatted output to the standard output (stdout).
- *
- * @format: A pointer to a format string that specifies the output format.
- * @...: Variable arguments list based on the format string.
- *
- * Return: The total number of characters printed to stdout.
- */
-int _printf(const char *format, ...)
-{
 	va_list args;
-	int word_counter;
+	int i = 0, j, len = 0;
+	int checker = 0;
 
 	va_start(args, format);
-	word_counter = fprint(format, args);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+
+	while (format[i] != '\0')
+	{
+		j = 0;
+		while (j <= 2)
+		{
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
+			{
+				len += m[j].f(args);
+				i = i + 2;
+				checker = 1;
+			}
+			j++;
+		}
+		if (checker == 0)
+		{
+		    _putchar(format[i]);
+		    i++;
+		    len++;
+		}
+		checker = 0;
+	}
 	va_end(args);
-	return (word_counter);
+	return (len);
 }
