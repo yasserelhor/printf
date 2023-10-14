@@ -79,7 +79,8 @@ here:
 				case 'i':
 					goto here;
 				default:
-					putstr("error: unknown conversion type character ‘k’ in format");
+					write(2, "Error\n", 5);
+					return (-1);
 					break;
 			}
 		}

@@ -4,11 +4,12 @@
  * numlen - counts the number of digits in a given number.
  * @num: the number.
  *
- * Reaturn: number of digits.
+ * Return: number of digits.
  */
 int numlen(int num)
 {
 	int len = 0;
+
 	if (num == 0)
 	{
 		return (1);
@@ -18,7 +19,7 @@ int numlen(int num)
 		num *= -1;
 		len++;
 	}
-	while(num > 0)
+	while (num > 0)
 	{
 		num = num / 10;
 		len++;
