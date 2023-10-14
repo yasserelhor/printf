@@ -7,6 +7,6 @@
 int _printf(const char *format, ...);
 void putnbr(long num);
 int numlen(int num);
-void _putchar(int c);
+int _putchar(int c);
 
 #endif

@@ -8,9 +8,10 @@
  *
  * Return: On success, returns the character written. On error, returns -1.
  */
-void _putchar(int c)
+int _putchar(int c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 
 /**
@@ -24,6 +25,8 @@ int putstr(char *str)
 {
 	int len;
 
+	if (str == NULL)
+		return (0);
 	len = 0;
 	while (str[len])
 	{
@@ -31,6 +34,58 @@ int putstr(char *str)
 		len++;
 	}
 	return (len);
+}
+
+/**
+ * fprint - Print formatted output to the standard output (stdout).
+ *
+ * @format: A pointer to a format string that specifies the output format.
+ * @args: Variable arguments list based on the format string.
+ *
+ * Return: The total number of characters printed to stdout.
+ */
+int fprint(const char *format, va_list args)
+{
+	int word_counter = 0, digits, number;
+
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			word_counter++;
+		}
+		else if (*format == '%')
+		{
+			format++;
+			switch (*format)
+			{
+				case 'c':
+					word_counter += _putchar(va_arg(args, int));
+					break;
+				case 's':
+					word_counter += putstr(va_arg(args, char *));
+					break;
+				case '%':
+					word_counter += _putchar('%');
+					break;
+				case 'd':
+here:
+					number = va_arg(args, int);
+					putnbr(number);
+					digits = numlen(number);
+					word_counter += digits;
+					break;
+				case 'i':
+					goto here;
+				default:
+					putstr("error: unknown conversion type character ‘k’ in format");
+					break;
+			}
+		}
+		format++;
+	}
+	return (word_counter);
 }
 
 /**
@@ -45,47 +100,9 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int word_counter;
-	int number;
-	int digits;
 
-	word_counter = 0;
 	va_start(args, format);
-	while (*format)
-	{
-		if (*format != '%')
-		{
-			write(1, format, 1);
-			word_counter++;
-		}
-			else if (*format == '%')
-			{
-				format++;
-				switch (*format)
-				{
-					case 'c':
-						_putchar(va_arg(args, int));
-						word_counter++;
-						break;
-					case 's':
-						word_counter += putstr(va_arg(args, char *));
-						break;
-					case 'd':
-						number = va_arg(args, int);
-						putnbr(number);
-						digits = numlen(number);
-                                                word_counter = word_counter + digits;
-						break;
-					case 'i':
-						number = va_arg(args, int);
-                                                putnbr(number);
-                                                digits = numlen(number);
-						word_counter = word_counter + digits;
-						break;
-					default:
-						break;
-				}
-			}
-		format++;
-	}
+	word_counter = fprint(format, args);
+	va_end(args);
 	return (word_counter);
 }
