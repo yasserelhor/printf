@@ -43,5 +43,6 @@ void puthex(unsigned int num);
 int hexlen(unsigned int num);
 int print_HEX(va_list args);
 void putHEX(unsigned int num);
+int print_Str(va_list args);
 
 #endif
