@@ -17,6 +17,11 @@ int print_Str(va_list args)
 		if (str[i] < 32 || str[i] >= 127)
 		{
 			write(1, "\\x", 2);
+			if (str[i] < 16)
+			{
+				_putchar('0');
+				len++;
+			}
 			putHEX(str[i]);
 			len = hexlen(str[i]) + 2;
 		}
