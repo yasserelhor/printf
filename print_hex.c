@@ -27,28 +27,15 @@ int hexlen(unsigned int num)
  * @num: The long integer to be printed.
  */
 
-void puthex(unsigned int num, bool uppercase)
+void puthex(unsigned int num)
 {
 	if (num < 16)
 	{
-		if (num < 10)
-		{
-			putchar(num + '0');
-        	} else
-		{
-			if (uppercase)
-			{
-				putchar(num - 10 + 'A');
-			} else
-			{
-				putchar(num - 10 + 'a');
-			}
-		}
-	} else
-	{
-		print_hex(num / 16, uppercase);
-		print_hex(num % 16, uppercase);
+		_putchar("0123456789abcdef"[num]);
+		return;
 	}
+	puthex(num / 16);
+	_putchar("0123456789abcdef"[num % 16]);
 }
 
 /**
