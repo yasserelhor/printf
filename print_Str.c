@@ -12,6 +12,10 @@ int print_Str(va_list args)
 	int i = 0;
 	int len = 0;
 
+	if (str == NULL)
+	{
+		return (0);
+	}
 	while (str[i])
 	{
 		if (str[i] < 32 || str[i] >= 127)
