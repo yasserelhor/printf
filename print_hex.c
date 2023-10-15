@@ -29,22 +29,22 @@ int hexlen(unsigned int num)
 
 void puthex(unsigned int num, bool uppercase)
 {
-	if (num < 16) 
+	if (num < 16)
 	{
-		if (num < 10) 
+		if (num < 10)
 		{
 			putchar(num + '0');
-        	} else 
+        	} else
 		{
-			if (uppercase) 
+			if (uppercase)
 			{
 				putchar(num - 10 + 'A');
-			} else 
+			} else
 			{
 				putchar(num - 10 + 'a');
 			}
 		}
-	} else 
+	} else
 	{
 		print_hex(num / 16, uppercase);
 		print_hex(num % 16, uppercase);
