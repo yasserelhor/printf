@@ -29,5 +29,8 @@ int _printf(const char * const format, ...);
 int print_int(va_list args);
 int numlen(long num);
 void putnbr(long num);
+int print_bin(va_list args);
+void putbin(unsigned int num);
+int binlen(unsigned int num);
 
 #endif
