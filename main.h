@@ -38,6 +38,9 @@ int print_unsigned(va_list args);
 int print_oct(va_list args);
 void putoct(unsigned int num);
 int octlen(unsigned int num);
+int print_hex(va_list args);
+void puthex(unsigned int num);
+int hexlen(unsigned int num);
 
 
 #endif
