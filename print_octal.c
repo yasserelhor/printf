@@ -23,7 +23,7 @@ int octlen(unsigned int num)
 }
 
 /**
- * putnbr - Recursively prints a long integer to the standard output (stdout).
+ * putoct - Recursively prints a long integer to the standard output (stdout).
  * @num: The long integer to be printed.
  */
 

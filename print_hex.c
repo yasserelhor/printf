@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * octlen - Calculates the number of digits in a long integer.
+ * hexlen - Calculates the number of digits in a long integer.
  * @num: The long integer for which to count digits.
  *
  * Return: The number of digits in the integer.
@@ -23,7 +23,7 @@ int hexlen(unsigned int num)
 }
 
 /**
- * putnbr - Recursively prints a long integer to the standard output (stdout).
+ * puthex - Recursively prints a long integer to the standard output (stdout).
  * @num: The long integer to be printed.
  */
 
@@ -39,7 +39,7 @@ void puthex(unsigned int num)
 }
 
 /**
- * print_oct - Conversion function for printing an integer.
+ * print_hex - Conversion function for printing an integer.
  * @args: A va_list containing the integer to be printed.
  *
  * Return: The number of characters printed.
