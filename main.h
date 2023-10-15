@@ -32,5 +32,12 @@ void putnbr(long num);
 int print_bin(va_list args);
 void putbin(unsigned int num);
 int binlen(unsigned int num);
+int unslen(unsigned int num);
+void putuns(unsigned int num);
+int print_unsigned(va_list args);
+int print_oct(va_list args);
+void putoct(unsigned int num);
+int octlen(unsigned int num);
+
 
 #endif
