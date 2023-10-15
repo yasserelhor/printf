@@ -25,7 +25,10 @@ int binlen(unsigned int num)
 void putbin(unsigned int num)
 {
 	if (num == 0)
+	{
+		_putchar('0');
 		return;
+	}
 	putbin(num / 2);
 	_putchar(num % 2 + '0');
 }
