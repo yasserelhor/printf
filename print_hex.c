@@ -52,6 +52,6 @@ int print_hex(va_list args)
 
 	num = va_arg(args, int);
 	puthex(num);
-	len = octlen(num);
+	len = hexlen(num);
 	return (len);
 }
