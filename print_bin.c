@@ -25,10 +25,7 @@ int binlen(unsigned int num)
 void putbin(unsigned int num)
 {
 	if (num == 0)
-	{
-		_putchar('0');
 		return;
-	}
 	putbin(num / 2);
 	_putchar(num % 2 + '0');
 }
@@ -45,6 +42,11 @@ int print_bin(va_list args)
 	int len;
 
 	num = va_arg(args, int);
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	putbin(num);
 	len = binlen(num);
 	return (len);
