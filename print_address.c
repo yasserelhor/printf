@@ -17,8 +17,8 @@ int print_adrs(va_list args)
 		return (0);
 	}
 	add = (unsigned long int)ptr;
-	write(1, "0x7ff", 5);
+	write(1, "0x", 2);
 	puthex(add);
-	len = hexlen(add) + 5;
+	len = hexlen(add) + 2;
 	return (len);
 }
