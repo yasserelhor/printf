@@ -14,7 +14,8 @@ int print_adrs(va_list args)
 
 	if (ptr == NULL)
 	{
-		return (0);
+		write(1, "(nil)", 1);
+		return (5);
 	}
 	add = (unsigned long int)ptr;
 	write(1, "0x", 2);
