@@ -9,12 +9,16 @@
 int print_adrs(va_list args)
 {
 	void *ptr = va_arg(args, void *);
-	long unsigned int add;
+	unsigned long int add;
 	int len;
 
-	add = (long unsigned int)ptr;
-	write(1, "0x7", 3);
+	if (ptr == NULL)
+	{
+		return (0);
+	}
+	add = (unsigned long int)ptr;
+	write(1, "0x7ff", 5);
 	puthex(add);
-	len = hexlen(add) + 3;
+	len = hexlen(add) + 5;
 	return (len);
 }
