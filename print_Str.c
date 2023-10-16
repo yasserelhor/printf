@@ -14,8 +14,7 @@ int print_Str(va_list args)
 
 	if (str == NULL)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		return (0);
 	}
 	while (str[i])
 	{
@@ -28,7 +27,7 @@ int print_Str(va_list args)
 				len++;
 			}
 			putHEX(str[i]);
-			len = hexlen(str[i]) + 2;
+			len += hexlen(str[i]) + 2;
 		}
 		else
 		{
