@@ -24,9 +24,7 @@ int _printf(const char * const format, ...)
 	};
 
 	va_list args;
-	int i = 0, len = 0;
-	int checker = 0;
-	int fct_index;
+	int i = 0, len = 0, checker = 0, fct_index;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -36,7 +34,7 @@ int _printf(const char * const format, ...)
 	{
 		if (format[i] == '%')
 		{
-			fct_index = check_format(format, i);
+		fct_index = check_format(format, i);
 			if (fct_index != -1)
 			{
 				len += m[fct_index].f(args);

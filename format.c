@@ -1,5 +1,19 @@
 #include "main.h"
 
+/**
+ * check_format - Check if a format specifier is valid and find its index.
+ *
+ * This function checks if the character at the specified 'index' in the
+ * 'format' string corresponds to a valid format specifier. If found, it
+ * returns the index of the specifier in the 'convert_match' array.
+ *
+ * @format: The format string to check.
+ * @index: The current index within the format string.
+ *
+ * Return: Index of the format
+ * specifier in the 'convert_match' array, or -1 if not found.
+ */
+
 int check_format(const char *format, int index)
 {
 	convert_match m[] = {
