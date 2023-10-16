@@ -18,15 +18,12 @@ int _printf(const char * const format, ...)
 		{"%b", print_bin}, {"%u", print_unsigned},
 		{"%o", print_oct}, {"%x", print_hex},
 		{"%X", print_HEX}, {"%S", print_Str},
-		{"%p", print_adrs}, {"%+i", print_pint},
-		{"%+d", print_pint},
-		{NULL, NULL}
+		{"%p", print_adrs}
 	};
 
 	va_list args;
-	int i = 0, len = 0;
+	int i = 0, j, len = 0;
 	int checker = 0;
-	int fct_index;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -34,15 +31,16 @@ int _printf(const char * const format, ...)
 
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		j = 0;
+		while (j <= 11)
 		{
-			fct_index = check_format(format, i);
-			if (fct_index != -1)
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-				len += m[fct_index].f(args);
+				len += m[j].f(args);
+				i = i + 2;
 				checker = 1;
-				i += _strlen(m[fct_index].id);
 			}
+			j++;
 		}
 		if (checker == 0)
 		{

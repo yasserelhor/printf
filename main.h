@@ -45,5 +45,7 @@ int print_HEX(va_list args);
 void putHEX(unsigned int num);
 int print_Str(va_list args);
 int print_adrs(va_list args);
+int check_format(const char *format, int index);
+int print_pint(va_list args);
 
 #endif
