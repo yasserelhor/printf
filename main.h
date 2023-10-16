@@ -40,7 +40,7 @@ void putoct(unsigned int num);
 int octlen(unsigned int num);
 int print_hex(va_list args);
 void puthex(unsigned long int num);
-int hexlen(unsigned int num);
+int hexlen(unsigned long int num);
 int print_HEX(va_list args);
 void putHEX(unsigned int num);
 int print_Str(va_list args);

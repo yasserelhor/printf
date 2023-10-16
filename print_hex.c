@@ -7,7 +7,7 @@
  * Return: The number of digits in the integer.
  */
 
-int hexlen(unsigned int num)
+int hexlen(unsigned long int num)
 {
 	int len;
 
