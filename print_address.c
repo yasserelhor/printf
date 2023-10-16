@@ -9,7 +9,7 @@
 int print_adrs(va_list args)
 {
 	void *ptr = va_arg(args, void *);
-	unsigned long int add;
+	long int add;
 	int len;
 
 	if (ptr == NULL)
