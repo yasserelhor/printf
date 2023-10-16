@@ -9,7 +9,9 @@ int check_format(const char *format, int index)
 		{"%o", print_oct}, {"%x", print_hex},
 		{"%X", print_HEX}, {"%S", print_Str},
 		{"%p", print_adrs}, {"%+i", print_pint},
-		{"%+d", print_int},
+		{"%+d", print_int}, {"%+u", print_insigned},
+		{"%+o", print_oct}, {"%+x", print_hex},
+		{"%+X", print_HEX},
 		{NULL, NULL}
 	};
 
