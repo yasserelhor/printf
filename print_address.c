@@ -13,7 +13,7 @@ int print_adrs(va_list args)
 	int len;
 
 	add = (long unsigned int)ptr;
-	write(1, "0x", 2);
+	write(1, "0x7", 3);
 	puthex(add);
 	len = hexlen(add);
 	return (len);
