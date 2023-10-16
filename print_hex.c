@@ -27,7 +27,7 @@ int hexlen(unsigned int num)
  * @num: The long integer to be printed.
  */
 
-void puthex(unsigned int num)
+void puthex(unsigned long int num)
 {
 	if (num < 16)
 	{
