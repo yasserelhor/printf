@@ -14,7 +14,7 @@ int print_pint(va_list args)
 	int len = 0;
 
 	num = va_arg(args, int);
-	if (num > 0)
+	if (num >= 0)
 	{
 		_putchar('+');
 		len++;

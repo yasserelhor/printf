@@ -47,5 +47,6 @@ int print_Str(va_list args);
 int print_adrs(va_list args);
 int check_format(const char *format, int index);
 int print_pint(va_list args);
+int print_spint(va_list args);
 
 #endif

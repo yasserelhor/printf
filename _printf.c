@@ -18,10 +18,7 @@ int _printf(const char * const format, ...)
 		{"%b", print_bin}, {"%u", print_unsigned},
 		{"%o", print_oct}, {"%x", print_hex},
 		{"%X", print_HEX}, {"%S", print_Str},
-		{"%p", print_adrs}, {"%+i", print_pint},
-		{"%+d", print_pint}, {"%+u", print_unsigned},
-		{"%+x", print_hex}, {"%+X", print_HEX},
-		{"%+o", print_oct},
+		{"%p", print_adrs},
 		{NULL, NULL}
 	};
 
