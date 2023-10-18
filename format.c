@@ -22,14 +22,7 @@ int check_format(const char *format, int index)
 		{"%b", print_bin}, {"%u", print_unsigned},
 		{"%o", print_oct}, {"%x", print_hex},
 		{"%X", print_HEX}, {"%S", print_Str},
-<<<<<<< HEAD
 		{"%p", print_adrs},
-=======
-		{"%p", print_adrs}, {"%+i", print_pint},
-		{"%+d", print_int}, {"%+u", print_unsigned},
-		{"%+o", print_oct}, {"%+x", print_hex},
-		{"%+X", print_HEX},
->>>>>>> ab933fb1827cfe3acb37c4a88dac3cd507cc37d9
 		{NULL, NULL}
 	};
 	int i = 0, j = 0, first_index = index;
