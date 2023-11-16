@@ -53,9 +53,9 @@ static int	ft_handle_format(const char *str, va_list args)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list		args;
-	int			len;
-	int			i;
+	va_list	args;
+	int		len;
+	int		i;
 
 	i = 0;
 	len = 0;

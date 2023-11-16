@@ -38,9 +38,9 @@ static void	print_add(unsigned long long int add)
 
 int	ft_printp(va_list args)
 {
-	void			*ptr;
-	unsigned long long int		add;
-	int				len;
+	void					*ptr;
+	unsigned long long int	add;
+	int						len;
 
 	ptr = va_arg(args, void *);
 	if (ptr == NULL)

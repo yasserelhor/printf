@@ -28,8 +28,8 @@ static int	ft_slen(const char *s)
 int	ft_prints(va_list val)
 {
 	char	*s;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	i = 0;
 	s = va_arg(val, char *);

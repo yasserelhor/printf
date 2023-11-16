@@ -38,8 +38,8 @@ static void	print_unsigned(unsigned int num)
 
 int	ft_printu(va_list args)
 {
-	unsigned int		num;
-	int	len;
+	unsigned int	num;
+	int				len;
 
 	num = va_arg(args, unsigned int);
 	len = num_of_digitsu(num);
